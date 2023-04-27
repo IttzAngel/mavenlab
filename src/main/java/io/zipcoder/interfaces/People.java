@@ -1,6 +1,7 @@
 package io.zipcoder.interfaces;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class People {
@@ -10,13 +11,13 @@ public class People {
     Person person;
 
     public void add(Person person){
-        personList.add(person);
+        personList.add(person); //add person to personList
     }
 
-    public String findById(long id){
+    public String findById(long id){ //searches person list for the id if getId matches an id, the name associated will be
         for (Person p : personList) {
             if(p.getId() == id){
-                return person.getName();
+                return p.getName();
             }
         }
         return "This person does not exist";
@@ -34,7 +35,12 @@ public class People {
     }
 
     public void remove(long id){
-        personList.remove(id);
+        for (Person e: personList) {
+            if (e.getId() == id) {
+                personList.remove(e);
+                break;
+            }
+        }
     }
 
     public void removeAll(){
@@ -45,8 +51,12 @@ public class People {
         return personList.size();
     }
 
-    public String toArray(){
-        return personList.toString();
+    public Person[] toArray(){
+        return personList.toArray(new Person[0]);
+    }
+
+    public Iterator<Person> iterator(){
+        return personList.iterator();
     }
 
 }

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class TestPeople {
 
@@ -23,31 +24,38 @@ public class TestPeople {
 
 
         List<Person> personList = new ArrayList<>();
-        assertEquals(personList, personList);
+        personList.add(person1);
+        personList.add(person2);
+        personList.add(person3);
+
+        assertEquals(personList.contains(person1), people.contains(person1));
     }
 
     @Test
-    public void remove(){
+    public void testRemove(){
         People people = new People();
         Person person = new Person(123, "Angel");
 
-        people.remove(123);
+        people.add(person);
+        people.remove(person);
 
-        assertEquals(person, person.getName());
-
+        assertFalse(people.contains(person));
     }
 
 
     @Test
     public void testFindById(){
-        Person person = new Person(400, "Jones");
+        People people = new People();
+        Person person = new Person(400, "Angel");
+
+        people.add(person);
 
         long id = 400;
+        String expectedName = "Angel";
 
-        person.getId();
+        String actualName = people.findById(id);
 
-        assertEquals(id, person.getId());
-
+        assertEquals(expectedName, actualName);
     }
 
 
