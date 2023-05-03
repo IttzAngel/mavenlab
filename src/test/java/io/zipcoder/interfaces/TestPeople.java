@@ -42,7 +42,6 @@ public class TestPeople {
         assertFalse(people.contains(person));
     }
 
-
     @Test
     public void testFindById(){
         People people = new People();
