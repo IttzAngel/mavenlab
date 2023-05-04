@@ -14,8 +14,6 @@ public final class Students extends People{
         INSTANCE.add(student3);
     }
 
-
-
     public Students getInstance(){
         return INSTANCE;
     }
