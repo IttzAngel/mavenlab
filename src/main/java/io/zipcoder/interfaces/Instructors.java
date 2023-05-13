@@ -14,8 +14,11 @@ public final class Instructors extends People{
         INSTANCE.add(instructor3);
     }
 
-    public Instructors getInstance(){
+    public static Instructors getInstance(){
         return INSTANCE;
     }
+
+
+
 
 }
