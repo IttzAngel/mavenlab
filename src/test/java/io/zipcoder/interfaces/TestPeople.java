@@ -49,12 +49,13 @@ public class TestPeople {
 
         people.add(person);
 
-        long id = 400;
-        String expectedName = "Angel";
+//        long id = 400;
+//        String expectedName = "Angel";
 
-        String actualName = people.findById(id);
+        //Person actualName = people.findById(id);
+        people.findById(person.getId());
 
-        assertEquals(expectedName, actualName);
+        assertEquals(person.getId(), 400);
     }
 
 

@@ -14,13 +14,13 @@ public class People {
         personList.add(person); //add person to personList
     }
 
-    public String findById(long id){ //searches person list for the id if getId matches an id, the name associated will be
+    public Person findById(long id){ //searches person list for the id if getId matches an id, the name associated will be
         for (Person p : personList) {
             if(p.getId() == id){
-                return p.getName();
+                return p;
             }
         }
-        return "This person does not exist";
+        return null;
     }
 
     public boolean contains(Person person){
