@@ -8,7 +8,7 @@ public class People {
 
     private List<Person> personList = new ArrayList<>();
 
-    Person person;
+    //Person person;
 
     public void add(Person person){
         personList.add(person); //add person to personList
